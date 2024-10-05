@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Bites</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .image-container {
+            position: relative;
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .image-container .text-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.75em;
+        }
+
+        header {
+            background: linear-gradient(to right, #ff6e7f, #bfe9ff); /* Gradient for more attractive look */
+            color: white;
+        }
+
+        .nav-link {
+            font-size: 1.2em;
+        }
+
+        .text-danger {
+            color: #d9534f !important;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        footer {
+            background-color: #343a40;
+        }
+
+        /* Ensure consistent image sizing inside the menu cards */
+        .menu-card img {
+            width: 100%;
+            height: 250px; /* Fix height */
+            object-fit: cover; /* Ensures the image covers the area without distorting */
+        }
+
+        .btn-book {
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <header class="text-white text-center py-4">
+        <h1>Welcome to Lucky Bites</h1>
+        <nav class="nav justify-content-center">
+            <a class="nav-link text-white" href="#about">About Us</a>
+            <a class="nav-link text-white" href="#menu">Our Menu</a>
+            <a class="nav-link text-white" href="#contact">Contact Us</a>
+        </nav>
+    </header>
+     
+    <div class="image-container">
+        <img src="resimage.webp" alt="Restaurant Image" height="500" width="2000">
+        <h2 class="text-center">Welcome to Lucky Bites, where we serve mouth-watering dishes made from the freshest ingredients.</h2>
+    </div>
+
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center text-danger">About Us</h2>
+            <h4 class="text-center">Our menu is crafted with love and passion to provide a delightful dining experience.</h4>
+            <p class="text-center">At Lucky Bites, we believe that every meal should be a delightful experience. Our dishes are crafted with the freshest ingredients, offering a blend of traditional and modern flavors. Whether you're craving a hearty meal or a light bite, we have something for every palate. With a passion for culinary excellence, we aim to bring joy to your dining table, making every visit to Lucky Bites a memorable one.</p>
+        </div>
+    </section>
+
+    <section id="menu" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center text-danger">Our Menu</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 menu-card">
+                        <div class="card-body">
+                            <h3 class="card-title text-danger">Paneer Butter Masala with naan and jeera rice</h3>
+                            <p class="card-text">Paneer Butter Masala is a creamy, spiced curry with soft paneer cubes, perfectly paired with naan and jeera rice for a delightful meal.</p>
+                            <img src="panner.webp" alt="Paneer Butter Masala" class="img-fluid">
+                            <button class="btn btn-primary btn-book" data-bs-toggle="modal" data-bs-target="#bookingModal" data-dish="Paneer Butter Masala" data-price="499">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 menu-card">
+                        <div class="card-body">
+                            <h3 class="card-title text-danger">Hyderabad Chicken Biryani</h3>
+                            <p class="card-text">Hyderabadi Dum Biryani is a fragrant, slow-cooked rice dish with tender meat, seasoned with a blend of aromatic spices. Its rich flavor and unique cooking method make it a beloved culinary tradition.</p>
+                            <img src="hyd.jpg" alt="Hyderabad Chicken Biryani" class="img-fluid">
+                            <button class="btn btn-primary btn-book" data-bs-toggle="modal" data-bs-target="#bookingModal" data-dish="Hyderabad Chicken Biryani" data-price="699">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 menu-card">
+                        <div class="card-body">
+                            <h3 class="card-title text-danger">Grilled Salmon</h3>
+                            <p class="card-text">Grilled salmon is a succulent, flaky fish with a smoky char and a hint of citrus, offering a perfect balance of richness and lightness. It's a healthy and flavorful dish, ideal for a satisfying meal.</p>
+                            <img src="grilled_salmon.jpeg" alt="Grilled Salmon" class="img-fluid">
+                            <button class="btn btn-primary btn-book" data-bs-toggle="modal" data-bs-target="#bookingModal" data-dish="Grilled Salmon" data-price="799">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center text-danger">Contact Us</h2>
+            <p class="text-center">Location: 123 Food Street, Flavor Town</p>
+            <p class="text-center">Phone: (123) 456-7890</p>
+            <p class="text-center">Email: contact@deliciousbites.com</p>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p>&copy; 2024 Lucky Bites. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Book Your Dish</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="dishName"></p>
+                    <div class="mb-3">
+                        <label for="quantityInput" class="form-label">Quantity</label>
+                        <input type="number" class="form-control" id="quantityInput" min="1" value="1">
+                    </div>
+                    <p id="totalBill" class="fw-bold"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="confirmBooking">Confirm Booking</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var bookingModal = document.getElementById('bookingModal');
+
+            bookingModal.addEventListener('show.bs.modal', function (event) {
+                var button = event.relatedTarget;
+                var dishName = button.getAttribute('data-dish');
+                var dishPrice = parseFloat(button.getAttribute('data-price'));
+
+                var modalTitle = bookingModal.querySelector('.modal-title');
+                var dishNameElement = bookingModal.querySelector('#dishName');
+                var totalBillElement = bookingModal.querySelector('#totalBill');
+                var quantityInput = bookingModal.querySelector('#quantityInput');
+
+                modalTitle.textContent = 'Book ' + dishName;
+                dishNameElement.textContent = 'Dish: ' + dishName;
+
+                quantityInput.addEventListener('input', function () {
+                    var quantity = parseInt(quantityInput.value);
+                    var total = (quantity * dishPrice).toFixed(2);
+                    totalBillElement.textContent = 'Total Bill: ₹' + total;
+                });
+
+                quantityInput.dispatchEvent(new Event('input')); // Trigger initial calculation
+            });
+
+            document.getElementById('confirmBooking').addEventListener('click', function () {
+                alert('Your booking has been confirmed!');
+                var modal = bootstrap.Modal.getInstance(bookingModal);
+                modal.hide();
+            });
+        });
+    </script>
+</body>
+</html>
